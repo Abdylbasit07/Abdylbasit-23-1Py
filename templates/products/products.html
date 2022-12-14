@@ -1,0 +1,28 @@
+{% extends 'layouts/index.html' %}
+
+{% block content %}
+    <style type="text/css">
+        .posts {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            margin-left: 10%;
+            flex-wrap: wrap;
+            padding: 10px;
+        }
+    </style>
+    <div class="products">
+        {% for product in products %}
+            <div class="card" style="width: 18rem;">
+                <img src="https://www.apple.com/v/iphone-13-pro/d/images/overview/design/water_resistant__gnhxpuloslay_large.jpg">
+                <div class="card-body">
+                    <h5 class="card-title">{{ product.title }}</h5>
+                    <h5>{{product.price}}</h5>
+                    <h6 class="card-subtitle">{{ product.mini_description }}</h6>
+                    <p class="card-text">{{product.create_date}}</p>
+                    <a href="/" class="btn btn-primary">Specifications</a>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
